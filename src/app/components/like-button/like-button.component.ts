@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-like-button',
@@ -9,5 +9,10 @@ import { Component, output } from '@angular/core';
   styleUrl: './like-button.component.css'
 })
 export class LikeButtonComponent {
+  liked = input(false)
   clicked = output()
+
+  onClick() {
+    this.clicked.emit()
+  }
 }

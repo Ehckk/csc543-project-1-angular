@@ -21,4 +21,8 @@ export class TimelineComponent {
     }
     this.post.getAll()
   }
+
+  updatePosts() {
+    this.post.getAll()
+  }
 }

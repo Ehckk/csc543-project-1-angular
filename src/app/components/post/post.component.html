@@ -3,7 +3,7 @@
     <p class="post-content">{{ content() }}</p>
     <div class="post-engagement">
         <div class="likes">
-            <app-like-button liked=[liked] (clicked)="likePost"/>
+            <app-like-button [liked]="has_liked()" (clicked)="likePost()"/>
             <span class="like-count">{{ likes().length }}</span> 
         </div>
         <p>{{ created() }}</p>

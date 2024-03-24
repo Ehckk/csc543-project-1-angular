@@ -23,5 +23,6 @@ export class PostFormComponent {
     console.log(this.model);
     this.submitted = true
     this.post.create(this.model)
+    this.post.getAll()
   }
 }
