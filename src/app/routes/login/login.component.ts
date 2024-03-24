@@ -4,9 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-login',
   standalone: true,
   imports: [],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  template: `
+    <input type="text" [(ngModel)]="username"/>
+  `
 })
 export class LoginComponent {
+  constructor (
 
+  ) {}
 }
