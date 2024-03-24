@@ -1,0 +1,31 @@
+<form #loginForm="ngForm" class="credentials-form">
+    <h1 class="form-title">Log In</h1>
+    <p class="form-message"></p>
+    <div class="form-body">
+        <div class="form-field">
+            <input 
+                type="text"
+                name="username" 
+                id="username" 
+                aria-label="Username" 
+                placeholder="Username" 
+                [(ngModel)]="model.username" 
+                required
+            />
+        </div>
+        <div class="form-field">
+            <input 
+                type="password"
+                name="password" 
+                id="password"
+                aria-label="Password" 
+                placeholder="Password" 
+                [(ngModel)]="model.password" 
+                required
+            />
+        </div>
+    </div>
+    <div class="form-buttons">
+    </div>
+    <p>Don't have an account? <a routerLink="/register">Create one</a></p>
+</form>

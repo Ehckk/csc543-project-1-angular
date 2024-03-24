@@ -1,6 +1,6 @@
 class Post {
     constructor(
-        public content: string,
+        public content: string='',
     ) {}
 }
 
