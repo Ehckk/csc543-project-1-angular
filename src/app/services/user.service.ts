@@ -47,4 +47,9 @@ export class UserService {
       }
     )
   }
+
+  logout() {
+    localStorage.clear()
+    this.router.navigate(["/logout"])
+  }
 }

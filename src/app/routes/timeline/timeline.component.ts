@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class TimelineComponent {
   constructor(private router: Router) {
-    this.router.navigate(['/login'])
+    if (!localStorage.getItem("access")) {
+      this.router.navigate(['/login'])
+    }
   }
 }
