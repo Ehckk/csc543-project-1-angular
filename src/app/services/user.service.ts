@@ -15,37 +15,37 @@ export class UserService {
 
   login(body: Credentials) {
     this.errors.clear()
-    return this.http.post("login", body).subscribe(
-      res => {
+    return this.http.post("login", body).subscribe({
+      next: res => {
         const { access } = res as TokenResponse 
         localStorage.setItem("access", access)
         this.router.navigate(["/posts"])
       },
-      (err) => {
+      error: (err) => {
         const errors = err.error as FormErrors<Credentials>
         for (const [key, value] of Object.entries(errors)) {
           this.errors.set(key, value)
           
         }
       }
-    )
+    })
   }
 
   register(body: Registration) {
     this.errors.clear()
-    return this.http.post("register", body).subscribe(
-      (res) => {
+    return this.http.post("register", body).subscribe({
+      next: (res) => {
         const { access } = res as TokenResponse 
         localStorage.setItem("access", access)
         this.router.navigate(["/posts"])
       },
-      (err) => {
+      error: (err) => {
         const errors = err.error as FormErrors<Registration>
         for (const [key, value] of Object.entries(errors)) {
           this.errors.set(key, value)
         }
       }
-    )
+    })
   }
 
   logout() {

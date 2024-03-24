@@ -1,1 +1,22 @@
-<p>post-form works!</p>
+<form #postForm="ngForm" class="post-form" (ngSubmit)="onSubmit()">
+    <div class="form-body">
+        <textarea
+            id="post-content" 
+            class="create-post"
+            name="content"
+            aria-label="content"
+            placeholder="What's cooking...?"
+            [(ngModel)]="model.content" 
+            defaultValue=""
+        >
+        </textarea>
+    </div>
+    <div class="form-buttons">
+        <p class="form-error">{{ post.errors.get("content") }}</p>
+        <app-button
+            [type]="'submit'"
+            [text]="'Cook'"
+            [size]="'large'"
+        />
+    </div>
+</form>

@@ -1,7 +1,7 @@
 import type { UserId, User, Credentials, Registration } from "./User"
 import type { PostId, Post, PostPartial, CreatePost } from "./Post"
 import type { LikePartial, Like } from "./Like"
-import type { ApiResponse, PostResponse, FormErrors, ActionData, Token, ApiArgs } from "./Utils"
+import type { ApiResponse, PostResponse, FormErrors, ActionData, TokenResponse, ApiArgs } from "./Utils"
 
 export type {
     UserId,
@@ -18,6 +18,6 @@ export type {
     PostResponse,
     FormErrors,
     ActionData,
-    Token,
+    TokenResponse,
     ApiArgs
 }
