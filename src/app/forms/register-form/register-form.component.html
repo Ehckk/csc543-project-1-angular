@@ -1,1 +1,62 @@
-<p>register-form works!</p>
+<form #loginForm="ngForm" class="credentials-form" (ngSubmit)="onSubmit()">
+    <h1 class="form-title">Registration</h1>
+    <p class="form-message"></p>
+    <div class="form-body">
+        <div class="form-field">
+            <input 
+                type="text"
+                name="username" 
+                id="username" 
+                aria-label="Username" 
+                placeholder="Username" 
+                [(ngModel)]="model.username" 
+                required
+            />
+            <p class="form-error">{{ user.errors.get("username") }}</p>
+        </div>
+        <div class="form-field">
+            <input 
+                type="text"
+                name="display_name" 
+                id="display_name" 
+                aria-label="Display Name" 
+                placeholder="Display Name" 
+                [(ngModel)]="model.display_name" 
+                required
+            />
+            <p class="form-error">{{ user.errors.get("display_name") }}</p>
+        </div>
+        <div class="form-field">
+            <input 
+                type="password"
+                name="password" 
+                id="password"
+                aria-label="Password" 
+                placeholder="Password" 
+                [(ngModel)]="model.password" 
+                required
+            />
+            <p class="form-error">{{ user.errors.get("password") }}</p>
+        </div>
+        <div class="form-field">
+            <input 
+                type="confirm"
+                name="confirm" 
+                id="confirm"
+                aria-label="Confirm" 
+                placeholder="Confirm" 
+                [(ngModel)]="model.confirm" 
+                required
+            />
+            <p class="form-error">{{ user.errors.get("confirm") }}</p>
+        </div>
+    </div>
+    <div class="form-buttons">
+        <app-button 
+            [type]="'submit'" 
+            [text]="'Sign Up'" 
+            [size]="'large'"
+        />
+    </div>
+    <p>Already have an account? <a routerLink="/login">Sign In</a></p>
+</form>
