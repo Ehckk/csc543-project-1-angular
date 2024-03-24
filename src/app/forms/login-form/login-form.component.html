@@ -1,4 +1,4 @@
-<form #loginForm="ngForm" class="credentials-form">
+<form #loginForm="ngForm" class="credentials-form" (ngSubmit)="onSubmit()">
     <h1 class="form-title">Log In</h1>
     <p class="form-message"></p>
     <div class="form-body">
@@ -12,6 +12,7 @@
                 [(ngModel)]="model.username" 
                 required
             />
+            <p class="form-error">{{ user.errors.get("username") }}</p>
         </div>
         <div class="form-field">
             <input 
@@ -23,10 +24,15 @@
                 [(ngModel)]="model.password" 
                 required
             />
+            <p class="form-error">{{ user.errors.get("password") }}</p>
         </div>
     </div>
     <div class="form-buttons">
-        <app-button [text]="'Log In'" [size]="'large'"/>
+        <app-button 
+            [type]="'submit'" 
+            [text]="'Log In'" 
+            [size]="'large'"
+        />
     </div>
     <p>Don't have an account? <a routerLink="/register">Create one</a></p>
 </form>

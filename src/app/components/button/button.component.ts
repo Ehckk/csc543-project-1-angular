@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, input, Output } from '@angular/core';
+import { Component, computed, EventEmitter, input, output, Output } from '@angular/core';
 
 type ButtonSize = "large" | "small"
 
@@ -9,13 +9,10 @@ type ButtonSize = "large" | "small"
   styleUrl: './button.component.css'
 })
 export class ButtonComponent {
+  type = input<HTMLButtonElement['type']>('button')
   text = input('')
   size = input<ButtonSize>('small')
+  disabled = input<boolean>(false)
   className = computed(() => `btn-${this.size()}`)
-  
-  @Output() clicked = new EventEmitter() 
-
-  onClicked(event: Event) {
-    this.clicked.emit(event)
-  }
+  clicked = output()
 }

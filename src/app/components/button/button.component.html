@@ -1,1 +1,8 @@
-<button [class]="className()" (click)="onClicked($event)">{{ text() }}</button>
+<button 
+    [type]="type()" 
+    [class]="className()" 
+    [disabled]="disabled()"
+    (click)="clicked" 
+>
+    {{ text() }}
+</button>

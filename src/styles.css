@@ -51,6 +51,7 @@ app-root {
 }
 
 a {
+    cursor: pointer;
     position: relative;
     color: var(--h-0);
     text-decoration: none;
