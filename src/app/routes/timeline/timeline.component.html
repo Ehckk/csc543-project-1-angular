@@ -3,5 +3,7 @@
         <h1>Posts 🍽</h1>
     </header>
     <app-post-form/>
-    <app-post/>
+    <app-post *ngFor="let post of post.posts" [post]="post">
+        {{ post }}
+    </app-post>
 </div>

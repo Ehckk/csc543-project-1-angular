@@ -1,1 +1,11 @@
-<p>post works!</p>
+<div class="post">
+    <span class="post-author">{{ author()?.display_name }}</span>
+    <p class="post-content">{{ content() }}</p>
+    <div class="post-engagement">
+        <div class="likes">
+            <app-like-button liked=[liked] (clicked)="likePost"/>
+            <span class="like-count">{{ likes().length }}</span> 
+        </div>
+        <p>{{ created() }}</p>
+    </div>
+</div>
