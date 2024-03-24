@@ -16,7 +16,11 @@ export class PostComponent {
   author = computed(() => this.post()?.author)
   likes = computed(() => this.post()?.likes ?? [])
   created = computed(() => {
-    
+    const created = this.post()?.created ?? ""
+    const date = new Date(created)
+    const dateStr = date.toLocaleDateString()
+    const timeStr = date.toLocaleTimeString([], { hour: "2-digit", hour12: true, minute: "2-digit" })
+    return `${dateStr} ${timeStr}`
   })
   has_liked = computed(() => Boolean(this.post()?.has_liked))
   like = inject(LikeService)
