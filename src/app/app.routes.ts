@@ -7,27 +7,38 @@ import { RegisterFormComponent } from './forms/register-form/register-form.compo
 
 export const routes: Routes = [
     {
-        path: "",
+        path: "login",
         component: AuthComponent,
         children: [
             { 
                 path: "",
                 component: LoginFormComponent 
             },
+        ],
+    },
+    {
+        path: "register",
+        component: AuthComponent,
+        children: [
             { 
-                path: "register", 
+                path: "", 
                 component: RegisterFormComponent
             },
         ]
     },
     {
-        path: "",
+        path: "posts",
         component: HomeComponent,
         children: [
             {
-                path: "posts",
+                path: "",
                 component: TimelineComponent
             }
         ] 
+    },
+    {
+        path: "",
+        redirectTo: "posts",
+        pathMatch: "full"
     }
 ];
