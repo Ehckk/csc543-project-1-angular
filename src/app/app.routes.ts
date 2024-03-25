@@ -11,7 +11,7 @@ export const routes: Routes = [
         component: AuthComponent,
         children: [
             { 
-                path: "login",
+                path: "",
                 component: LoginFormComponent 
             },
             { 
@@ -29,10 +29,5 @@ export const routes: Routes = [
                 component: TimelineComponent
             }
         ] 
-    },
-    {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "/posts"
     }
 ];
