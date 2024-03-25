@@ -1,9 +1,10 @@
 <div class="header-top">
     <h2 class="header-title">My Awesome Social Media App</h2>
-    <app-button
-        [type]="'button'"
-        [text]="'Log Out'"
-        [size]="'small'"
-        (clicked)="user.logout()"
-    />
+    <div routerLink="/login">
+        <app-button
+            [type]="'button'"
+            [text]="'Log Out'"
+            [size]="'small'"
+        />
+    </div>
 </div>
