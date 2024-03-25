@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, input, output, Output } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 
 type ButtonSize = "large" | "small"
 
